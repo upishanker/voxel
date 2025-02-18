@@ -41,4 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+    function updateFavicon() {
+        const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const favicon = document.querySelector("link[rel='icon']") || document.createElement("link");
+    
+        favicon.rel = "icon";
+        favicon.href = darkMode ? "white_logo.png" : "logo.png";
+        
+        document.head.appendChild(favicon);
+    }
+    
+    // Run on page load
+    updateFavicon();
+    
+    // Listen for changes in theme
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicon);
+    
 });
