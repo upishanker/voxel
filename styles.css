@@ -196,14 +196,15 @@ body {
 /* Content Section */
 .content-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   max-width: 800px;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .content-image {
-  width: 400px;
+  width: 350px;
   height: auto;
   border-radius: 10px;
 }
@@ -214,6 +215,22 @@ body {
 
 .content-text h2 {
   margin-bottom: 10px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers items horizontally */
+  margin-right: 20px; /* spacing between left and right sections */
+}
+
+.content-image {
+  max-width: 100%; /* adjust as necessary */
+  height: auto;
+}
+
+.icon {
+  margin-top: 10px; /* spacing between the image and the icon */
 }
 
 /* Opportunities Form */
