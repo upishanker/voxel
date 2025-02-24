@@ -2,8 +2,14 @@
 body {
   background-color: white;
   font-family: roboto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
-
 /* Navbar */
 .topnav {
   display: flex;
@@ -337,4 +343,35 @@ body {
       height: 250px;
   }
 }
-
+.main-content {
+  flex: 1;
+}
+footer {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  text-align: justify;
+  color: white;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+}
+#footer-logo {
+  height: 70px;
+  width: auto;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.icons svg:hover {
+  color: grey;
+}
+a {
+  color: inherit; /* Inherit the color of the parent element */
+  text-decoration: none; /* Remove underline if it's added */
+}
+a:visited {
+  color: inherit; /* Prevent visited links from turning purple */
+}
