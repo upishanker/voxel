@@ -111,6 +111,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 150px;
 }
 
 /* Default flip card size */
@@ -148,7 +149,6 @@ body {
 }
 
 .flip-card-front {
-  background-color: black;
   color: white;
 }
 
@@ -160,7 +160,7 @@ body {
 }
 
 .flip-card img {
-  max-width: 80%;
+  width: 500px;
   height: auto;
   margin-top: 10px;
 }
@@ -182,6 +182,12 @@ body {
   .flip-card {
       width: 250px;
       height: 250px;
+      margin-bottom: 200px;
+  }
+  
+  .flip-card img {
+    width: 250px;
+    height: auto;
   }
 
   .flip-card-back h1 {
@@ -238,11 +244,6 @@ body {
   margin-left: 50vh;
 }
 
-/* Prism */
-#prism {
-  height: 400px;
-  width: auto;
-}
 
 /* Responsive Navbar */
 .menu-icon {
