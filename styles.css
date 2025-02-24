@@ -1,0 +1,340 @@
+/* Global Styles */
+body {
+  background-color: white;
+  font-family: roboto;
+}
+
+/* Navbar */
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
+}
+
+.topnav-right {
+  display: flex; /* Desktop layout */
+}
+
+.topnav-right a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 30px 42px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  color: grey;
+}
+
+.topnav a.active {
+  color: blue;
+}
+
+/* Logo */
+.logo-text {
+  height: 70px;
+  width: auto;
+  padding-top: 10px;
+  padding-left: 40px;
+}
+
+/* Main Content */
+.main {
+  font-size: 40px;
+  margin-top: 7vh;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -3vh;
+  height: 85px;
+  width: auto;
+}
+
+/* Definition Section */
+.definition {
+  margin-left: 23vw;
+  margin-right: 15vw;
+}
+
+#voxel-def {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+/* Mission Section */
+.mission {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  margin-top: 15vh;
+}
+
+#mission-title {
+  margin-left: 10vw;
+  white-space: nowrap;
+}
+
+#mission-text {
+  font-weight: normal;
+  font-size: 20px;
+  margin-left: 10vw;
+  margin-right: 11vw;
+}
+
+/* Fields Section */
+#fields {
+  position: absolute;
+  bottom: 0;
+  margin-top: 10vh;
+  margin-left: 10vw;
+}
+
+/* Flip Card Section */
+.flip-card-container {
+  display: flex;
+  flex-wrap: wrap;  /* Allows wrapping on smaller screens */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Default flip card size */
+.flip-card {
+  background-color: transparent;
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.flip-card-front {
+  background-color: black;
+  color: white;
+}
+
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+  overflow: auto; /* Prevents text from overflowing */
+}
+
+.flip-card img {
+  max-width: 80%;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Flip card responsiveness */
+@media only screen and (max-width: 768px) {
+  .flip-card-container {
+      flex-direction: column; /* Stacks cards vertically */
+      align-items: center;
+  }
+
+  .flip-card {
+      width: 300px;
+      height: 300px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .flip-card {
+      width: 250px;
+      height: 250px;
+  }
+
+  .flip-card-back h1 {
+      font-size: 20px;  /* Adjust font size for better readability */
+  }
+
+  .flip-card-back p {
+      font-size: 14px;
+  }
+}
+
+/* Content Section */
+.content-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.content-image {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.content-text {
+  max-width: 400px;
+}
+
+.content-text h2 {
+  margin-bottom: 10px;
+}
+
+/* Opportunities Form */
+#opportunities-form {
+  margin-left: 50vh;
+}
+
+/* Prism */
+#prism {
+  height: 400px;
+  width: auto;
+}
+
+/* Responsive Navbar */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  background: none;
+  border: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .topnav-right {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+  }
+
+  .topnav-right a {
+      display: block;
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+  }
+
+  .topnav-right.active {
+      display: flex;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+  .logo-text {
+      padding-left: 20px;
+      height: 60px;
+  }
+
+  .main {
+      font-size: 32px;
+      margin-top: 5vh;
+  }
+
+  .logo {
+      margin-top: -2vh;
+      height: 70px;
+  }
+
+  .definition {
+      margin-left: 5vw;
+      margin-right: 5vw;
+  }
+
+  .mission {
+      flex-direction: column;
+      margin-top: 10vh;
+  }
+
+  #mission-title, #mission-text {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+  }
+
+  #fields {
+      position: relative;
+      margin: 20px auto;
+      bottom: auto;
+      left: auto;
+  }
+
+  .content-container {
+      flex-direction: column;
+      max-width: 90%;
+  }
+
+  .content-image, .content-text {
+      width: 100%;
+      max-width: none;
+  }
+
+  #opportunities-form {
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .topnav-right a {
+      padding: 10px 15px;
+      font-size: 14px;
+  }
+
+  .main {
+      font-size: 28px;
+      margin-top: 4vh;
+  }
+
+  .logo {
+      height: 60px;
+  }
+
+  #voxel-def, #mission-text {
+      font-size: 18px;
+  }
+
+  .flip-card {
+      width: 250px;
+      height: 250px;
+  }
+}
+
