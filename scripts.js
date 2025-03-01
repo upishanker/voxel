@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        const result = await response.json();
+        const result = await response.json(); 
         if (result.status === 'success') {
             alert('Form submitted successfully!');
             form.reset();
