@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Official Website of Voxel Labs" />
         <meta name="author" content="Upi Shanker" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="styles.css" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +15,78 @@
     <body>
         <div id="navbar-container"></div>
         <div class="main-content">
-            <h1 class="main">Opportunities</h1>
-            <div id="opportunities-form"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSetuUPAFVnF0jZpNLBwi1ofMZnv2gv22jbDrl1E1H8Dz6vtfQ/viewform?embedded=true" width="640" height="3810" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+                    <h1 class="main">Welcome to the application process for Voxel, Dev.!</h1>
+                    <h3 class="application-intro">As a member of Voxel, Dev., you will have the opportunity to: </h3>
+                    <div class="application-intro">
+                        <ul class="intro-list">
+                            <li>Collaborate with like-minded individuals on innovative passion projects.</li>
+                            <li>Learn from experts in diverse fields to solve complex problems.</li>
+                            <li>Identify and address knowledge gaps at the intersection of neuroscience and technology.</li>
+                            <li>Develop critical skills in data collection, signal processing, data analysis, imaging methods, and machine learning.</li>
+                            <li>Grow personally and professionally through active learning, teamwork, and leadership.</li>
+                            <li>Pursue funding for your project ideas and present findings at conferences.</li>
+                        </ul>
+                        <p>If you're excited about joining a supportive and dynamic group that challenges and inspires each other, we encourage you to apply!</p>
+                        <p>Complete this application to take the first step toward becoming part of the Voxel, Dev. family.<br>Successful applicants will be invited to an informal interview to ensure alignment with our mission, culture, and commitment to making a positive mark on the world.</p>
+                    </div>
+                    <a href="#basic-info"><img src="media/down.png" id="down-arrow"></a>
+                    <form id="voxel-form">
+                        <div id="basic-info">
+                            <input type="text" id="name" name="name" placeholder="Full Name" onfocus="this.placeholder=''" onblur="this.placeholder='Full Name'"><br>
+                            <input type="email" id="email" name="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'"><br>
+                            <input type="text" id="major" name="major" placeholder="Major/Field of Study" onfocus="this.placeholder=''" onblur="this.placeholder='Major/Field of Study'"><br>
+                            <label for="grade">Year in School: </label><br>
+                            <select id="grade" name="grade">
+                                <option value="freshman">Freshman</option>
+                                <option value="sophomore">Sophomore</option>
+                                <option value="junior">Junior</option>
+                                <option value="senior">Senior</option>
+                                <option value="post-bacc">Post-Baccaleureate</option>
+                                <option value="masters">Masters Student</option>
+                                <option value="phd">Doctorol Candidate</option>
+                                <option value="med-student">Medical Student</option>
+                                <option value="postdoc">Postdoctoral</option>
+                                <option value="professional">Professional</option>
+                            </select><br>
+                            <label for="graduation">Expected Graduation Date:</label>
+                            <input type="date" id="graduation" name="graduation"><br>
+                            <label for="short1">What excites you about joining Voxel, Dev.? (Limit: 200 words)</label>
+                            <p>Word Count: <span id="short1-text">0</span></p>
+                            <textarea class="short1" id="short1" name="short1" oninput="countWord(this.id, 'short1-text')"></textarea><br>
+                            <label for="short2">What skills or expertise do you hope to contribute to the group? (Examples: programming, data analysis, neuroscience knowledge, hardware design, etc.)</label><br>
+                            <textarea class="short2" name="short2"></textarea><br> 
+                            <label for="short3">What personal or professional goals would you like to achieve through your involvement in the lab? (Limit: 200 words)</label><br>
+                            <p>Word Count: <span id="short3-text">0</span></p>
+                            <textarea class="short1" id="short3" name="short3" oninput="countWord(this.id, 'short3-text')"></textarea><br>
+                            <label for="short4">What makes you a unique fit for Voxel, Dev.? (Limit: 200 words)</label><br>
+                            <p>Word Count: <span id="short4-text">0</span></p>
+                            <textarea class="short1" id="short4" name="short4" oninput="countWord(this.id, 'short4-text')"></textarea><br>
+                            <label for="time">How many hours per week can you commit to Voxel, Dev.?</label><br>
+                            <div class="slider-container">
+                                <input type="range" id="time" min="0" max="20" value="0" oninput="updateValue(this.value)">
+                                <div class="value" id="slider-value">00</div>
+                            </div>
+                            <p>Can you attend weekly lab meetings every Thursday at 6:15-8pm?</p>
+                            <div class="radio-container">
+                                <label><input type="radio" name="meetings" value="yes-in person" onchange="regularOption()">Yes, in-person for the total amount of time</input></label><br>
+                                <label><input type="radio" name="meetings" value="yes-only remote" onchange="regularOption()">Yes, but only remotely</input></label><br>
+                                <label><input type="radio" name="meetings" value="yes-portion" onchange="regularOption()">Yes, but only for a portion of the time</input></label><br>
+                                <label><input type="radio" name="meetings" value="no" onchange="regularOption()">No, but I can contribute asynchronously</input></label><br>
+                                <label>
+                                    <input type="radio" name="meetings" id="other" value="other" onchange="otherOption()">Other:
+                                    <input type="text" name="other" id="other-text" disabled/>
+                                </label> 
+                            </div>
+                            <p id="leadership"> Are you interested in pursuing a leadership position? Note: This implies at least 3 hours of weekly commitment.</p>
+                            <div class="radio-container-yn">
+                                <label><input type="radio" name="leadership" value="yes" class="leadership">Yes</input></label>
+                                <label><input type="radio" name="leadership" value="no" class="leadership">No</input></label><br>
+                            </div>
+                            <label for="short2">Optional: Is there anything else you'd like us to know about you?</label><br>
+                            <textarea class="short2" name="short2" id="additional"></textarea><br>
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
             <script src="scripts.js"></script>
         </div>
         <footer>

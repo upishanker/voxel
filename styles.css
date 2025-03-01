@@ -1,4 +1,7 @@
 /* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: white;
   font-family: roboto;
@@ -383,6 +386,7 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  padding-right: 75px;
 }
 .icons svg:hover {
   color: grey;
@@ -393,4 +397,208 @@ a {
 }
 a:visited {
   color: inherit; /* Prevent visited links from turning purple */
+}
+
+
+.application-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intro-list {
+  display: inline-block;
+  text-align: left;
+  list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="scale(0.5) translate(0, 15)" transform-origin="center"><path d="m12 3 2.23 6.88h7.23l-5.85 4.24L17.85 21 12 16.75 6.15 21l2.24-6.88-5.85-4.24h7.23L12 3z" fill="%23000000"></path></g></svg>')
+}
+.intro-list li::marker{
+  font-size: 5em;
+  line-height: .1;
+}
+
+#nextBtn {
+  margin-top: 40px;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#down-arrow { 
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25px;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+#basic-info {
+  margin-top: 25px;
+  text-align: center;
+}
+
+form input[type="text"], input[type="email"] {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  max-width: fit-content;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  border-bottom: 3px solid black;
+  background-color: transparent;
+  color: black;
+  caret-color: black;
+}
+
+input[type=text]::placeholder {
+  text-align: center;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+input[type=email]::placeholder {
+  text-align: center;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+#graduation {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.short1-container label {
+  margin-right: 100px;
+}
+.short1 {
+  width: 70% !important;
+  height: 275px !important;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 3px solid black;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 16px;
+  resize: none;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.short2 {
+  width: 70% !important;
+  height: 150px !important;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 3px solid black;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 16px;
+  resize: none;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+
+.slider-container {
+  width: 300px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #333, #555);  /* Dark gray background */
+  border-radius: 10px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+/* Thumb (slider handle) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  background: #fff;  /* White thumb */
+  border: 2px solid #ccc;  /* Light gray border */
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);  /* Dark shadow for depth */
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Hover & Active Effects */
+input[type="range"]:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+  border-color: #888;  /* Slightly darker border on hover */
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  border-color: #aaa;  /* Darker border when active */
+}
+
+/* Value display */
+.value {
+  margin-top: 10px;
+  font-size: 18px;
+  color: black;  /* White text for contrast */
+}
+
+.radio-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.radio-container label {
+  display: block;
+  text-align: center;
+  margin-bottom: -15px;
+}
+
+.radio-container input[type="radio"] {
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+  accent-color: black;
+}
+
+
+.radio-container-yn label{
+  margin-right: 10px;
+}
+
+.radio-container-yn input[type="radio"] {
+  margin-right: 5px;
+  accent-color: black;
+}
+
+input[type=submit] {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  cursor: pointer;
+}
+
+#leadership {
+  margin-top: 25px;
 }
